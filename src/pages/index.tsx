@@ -14,10 +14,10 @@ export default function Home() {
 
         <header className="px-4 py-24">
           <div className="w-full flex flex-row justify-between gap-x-4">
-            <div className="w-1/2">
+            <div className="w-full">
               <EventsElement />
             </div>
-            <div className="w-1/2">
+            <div className="w-full">
               <AppDescription />
             </div>
           </div>
