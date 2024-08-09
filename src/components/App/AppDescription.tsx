@@ -26,7 +26,7 @@ const AppDescription = () => {
         <Link href="https://github.com/harutoyume/Flow">
           <Button variant="link" className="pl-0 flex gap-x-1">
             <Github size={20} />
-            Github
+            GitHub
           </Button>
         </Link>
       </CardFooter>

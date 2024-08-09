@@ -1,7 +1,7 @@
 import Head from "next/head";
-import Link from "next/link";
-import AppNavigation from "@/components/AppNavigation";
-import AppDescription from "@/components/AppDescription";
+import AppNavigation from "@/components/App/AppNavigation";
+import AppDescription from "@/components/App/AppDescription";
+import EventsElement from "@/components/Events/EventsElement";
 
 export default function Home() {
   return (
@@ -12,8 +12,15 @@ export default function Home() {
       <main className="text-primary">
         <AppNavigation />
 
-        <header className="p-4">
-          <AppDescription />
+        <header className="px-4 py-24">
+          <div className="w-full flex flex-row justify-between gap-x-4">
+            <div className="w-1/2">
+              <EventsElement />
+            </div>
+            <div className="w-1/2">
+              <AppDescription />
+            </div>
+          </div>
         </header>
       </main>
     </>
