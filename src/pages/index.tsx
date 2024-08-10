@@ -13,7 +13,7 @@ export default function Home() {
         <AppNavigation />
 
         <header className="px-4 py-24">
-          <div className="w-full flex flex-row justify-between gap-x-4">
+          <div className="w-full flex flex-row justify-between gap-4 max-sm:flex-col">
             <div className="w-full">
               <EventsElement />
             </div>

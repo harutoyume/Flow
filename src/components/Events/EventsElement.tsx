@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, useState, useEffect } from "react";
 import EventsCard from "@/components/Events/EventsCard";
 
 interface TableEvent {
@@ -14,6 +14,17 @@ const EventsElement = () => {
   const [eventDate, setEventDate] = useState("");
   const isCreateButtonDisabled =
     !eventName.trim() || !eventDescription.trim() || !eventDate.trim();
+
+  useEffect(() => {
+    const storedEvents = localStorage.getItem("tableEvents");
+    if (storedEvents.length > 2) {
+      setTableEvents(JSON.parse(storedEvents));
+    }
+  }, []);
+
+  useEffect(() => {
+      localStorage.setItem("tableEvents", JSON.stringify(tableEvents));
+  }, [tableEvents]);
 
   const handleEventNameChange = (e: ChangeEvent<HTMLInputElement>) => {
     setEventName(e.target.value);
