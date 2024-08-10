@@ -9,7 +9,7 @@ export default function Home() {
       <Head>
         <title>The Flow Organizer</title>
       </Head>
-      <main className="text-primary">
+      <main>
         <AppNavigation />
 
         <header className="px-4 py-24">

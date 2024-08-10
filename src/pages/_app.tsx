@@ -15,9 +15,7 @@ export default function App({ Component, pageProps }: AppProps) {
         enableSystem
         disableTransitionOnChange
       >
-        <div className="inter-font">
-          <Component {...pageProps} />
-        </div>
+        <Component {...pageProps} />
       </ThemeProvider>
     </>
   );

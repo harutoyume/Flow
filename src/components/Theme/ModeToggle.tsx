@@ -24,15 +24,15 @@ export function ModeToggle() {
           <span className="sr-only">Изменить тему</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="inter-font">
+      <DropdownMenuContent align="end">
         <DropdownMenuItem onClick={() => setTheme("light")}>
-          <Sun size={16} className="mr-1.5"/> Светлая тема
+          <Sun size={16} className="mr-1.5" /> Светлая тема
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme("dark")}>
-          <Moon size={16} className="mr-1.5"/> Темная тема
+          <Moon size={16} className="mr-1.5" /> Темная тема
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme("system")}>
-          <Laptop size={16} className="mr-1.5"/> Как в системе
+          <Laptop size={16} className="mr-1.5" /> Как в системе
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

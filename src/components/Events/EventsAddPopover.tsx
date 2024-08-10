@@ -32,7 +32,7 @@ const EventsAddPopover = ({
           <Plus size={16} />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-80 inter-font">
+      <PopoverContent className="w-80">
         <div className="grid gap-4">
           <div className="space-y-2">
             <h4 className="font-medium leading-none">Новое событие</h4>
