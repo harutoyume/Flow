@@ -15,6 +15,7 @@ interface EventsAddPopoverProps {
   handleEventDescriptionChange: (e: ChangeEvent<HTMLInputElement>) => void;
   handleEventDateChange: (e: ChangeEvent<HTMLInputElement>) => void;
   handleEventAddToTable: () => void;
+  isCreateButtonDisabled: boolean;
 }
 
 const EventsAddPopover = ({
@@ -22,6 +23,7 @@ const EventsAddPopover = ({
   handleEventDescriptionChange,
   handleEventDateChange,
   handleEventAddToTable,
+  isCreateButtonDisabled,
 }: EventsAddPopoverProps) => {
   return (
     <Popover>
@@ -69,7 +71,12 @@ const EventsAddPopover = ({
           </div>
           <div className="flex gap-x-1">
             <PopoverPrimitive.Close asChild>
-              <Button onClick={handleEventAddToTable}>Добавить</Button>
+              <Button
+                onClick={handleEventAddToTable}
+                disabled={isCreateButtonDisabled}
+              >
+                Добавить
+              </Button>
             </PopoverPrimitive.Close>
             <PopoverPrimitive.Close asChild>
               <Button variant="outline">Отмена</Button>

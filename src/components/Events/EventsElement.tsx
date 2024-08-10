@@ -12,6 +12,7 @@ const EventsElement = () => {
   const [eventName, setEventName] = useState("");
   const [eventDescription, setEventDescription] = useState("");
   const [eventDate, setEventDate] = useState("");
+  const isCreateButtonDisabled = !eventName || !eventDescription || !eventDate;
 
   const handleEventNameChange = (e: ChangeEvent<HTMLInputElement>) => {
     setEventName(e.target.value);
@@ -39,6 +40,7 @@ const EventsElement = () => {
       handleEventDescriptionChange={handleEventDescriptionChange}
       handleEventDateChange={handleEventDateChange}
       handleEventAddToTable={handleEventAddToTable}
+      isCreateButtonDisabled={isCreateButtonDisabled}
     />
   );
 };

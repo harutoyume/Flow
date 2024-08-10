@@ -15,6 +15,7 @@ interface EventsCardProps {
   handleEventDescriptionChange: (e: ChangeEvent<HTMLInputElement>) => void;
   handleEventDateChange: (e: ChangeEvent<HTMLInputElement>) => void;
   handleEventAddToTable: () => void;
+  isCreateButtonDisabled: boolean;
 }
 
 const EventsCard = ({
@@ -23,6 +24,7 @@ const EventsCard = ({
   handleEventDescriptionChange,
   handleEventDateChange,
   handleEventAddToTable,
+  isCreateButtonDisabled,
 }: EventsCardProps) => {
   return (
     <Card>
@@ -37,6 +39,7 @@ const EventsCard = ({
             handleEventDescriptionChange={handleEventDescriptionChange}
             handleEventDateChange={handleEventDateChange}
             handleEventAddToTable={handleEventAddToTable}
+            isCreateButtonDisabled={isCreateButtonDisabled}
           />
         </div>
       </CardHeader>
