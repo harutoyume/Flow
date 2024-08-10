@@ -7,7 +7,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import EventsTable from "@/components/Events/EventsTable";
-import EventsAddPopover from "@/components/Events/EventsAddPopover";
+import EventsEventAddPopover from "@/components/Events/EventsEventAddPopover";
 
 interface EventsCardProps {
   tableEvents: { name: string; description: string; date: string }[];
@@ -16,6 +16,7 @@ interface EventsCardProps {
   handleEventDateChange: (e: ChangeEvent<HTMLInputElement>) => void;
   handleEventAddToTable: () => void;
   isCreateButtonDisabled: boolean;
+  handleEventDeleteFromTable: (index: number) => void;
 }
 
 const EventsCard = ({
@@ -25,6 +26,7 @@ const EventsCard = ({
   handleEventDateChange,
   handleEventAddToTable,
   isCreateButtonDisabled,
+  handleEventDeleteFromTable,
 }: EventsCardProps) => {
   return (
     <Card>
@@ -34,7 +36,7 @@ const EventsCard = ({
           <CardDescription>Список событий</CardDescription>
         </div>
         <div>
-          <EventsAddPopover
+          <EventsEventAddPopover
             handleEventNameChange={handleEventNameChange}
             handleEventDescriptionChange={handleEventDescriptionChange}
             handleEventDateChange={handleEventDateChange}
@@ -44,7 +46,10 @@ const EventsCard = ({
         </div>
       </CardHeader>
       <CardContent>
-        <EventsTable tableEvents={tableEvents} />
+        <EventsTable
+          tableEvents={tableEvents}
+          handleEventDeleteFromTable={handleEventDeleteFromTable}
+        />
       </CardContent>
     </Card>
   );

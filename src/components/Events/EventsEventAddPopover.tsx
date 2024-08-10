@@ -18,7 +18,7 @@ interface EventsAddPopoverProps {
   isCreateButtonDisabled: boolean;
 }
 
-const EventsAddPopover = ({
+const EventsEventAddPopover = ({
   handleEventNameChange,
   handleEventDescriptionChange,
   handleEventDateChange,
@@ -88,4 +88,4 @@ const EventsAddPopover = ({
   );
 };
 
-export default EventsAddPopover;
+export default EventsEventAddPopover;

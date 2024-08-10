@@ -1,4 +1,5 @@
 import React from "react";
+import { Calendar, Text, Clock3 } from "lucide-react";
 import {
   Table,
   TableBody,
@@ -7,19 +8,39 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import EventsEventMenu from "@/components/Events/EventsEventMenu";
 
 interface EventsTableProps {
   tableEvents: { name: string; description: string; date: string }[];
+  handleEventDeleteFromTable: (index: number) => void;
 }
 
-const EventsTable = ({ tableEvents }: EventsTableProps) => {
+const EventsTable = ({
+  tableEvents,
+  handleEventDeleteFromTable,
+}: EventsTableProps) => {
   return (
     <Table>
       <TableHeader>
         <TableRow>
-          <TableHead>Cобытие</TableHead>
-          <TableHead>Описание</TableHead>
-          <TableHead>Дата</TableHead>
+          <TableHead>
+            {" "}
+            <span className="flex items-center gap-x-1">
+              <Calendar size={16} /> Cобытие
+            </span>{" "}
+          </TableHead>
+          <TableHead>
+            {" "}
+            <span className="flex items-center gap-x-1">
+              <Text size={16} /> Описание
+            </span>{" "}
+          </TableHead>
+          <TableHead>
+            {" "}
+            <span className="flex items-center gap-x-1">
+              <Clock3 size={16} /> Дата
+            </span>{" "}
+          </TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
@@ -29,6 +50,12 @@ const EventsTable = ({ tableEvents }: EventsTableProps) => {
               <TableCell>{tableEvent.name}</TableCell>
               <TableCell>{tableEvent.description}</TableCell>
               <TableCell>{tableEvent.date}</TableCell>
+              <TableCell>
+                <EventsEventMenu
+                  handleEventDeleteFromTable={handleEventDeleteFromTable}
+                  index={index}
+                />
+              </TableCell>
             </TableRow>
           ))
         ) : (

@@ -12,7 +12,8 @@ const EventsElement = () => {
   const [eventName, setEventName] = useState("");
   const [eventDescription, setEventDescription] = useState("");
   const [eventDate, setEventDate] = useState("");
-  const isCreateButtonDisabled = !eventName || !eventDescription || !eventDate;
+  const isCreateButtonDisabled =
+    !eventName.trim() || !eventDescription.trim() || !eventDate.trim();
 
   const handleEventNameChange = (e: ChangeEvent<HTMLInputElement>) => {
     setEventName(e.target.value);
@@ -31,6 +32,15 @@ const EventsElement = () => {
       ...prevTableEvents,
       { name: eventName, description: eventDescription, date: eventDate },
     ]);
+    setEventName("");
+    setEventDescription("");
+    setEventDate("");
+  };
+
+  const handleEventDeleteFromTable = (index: number) => {
+    setTableEvents((prevTableEvents) =>
+      prevTableEvents.filter((_, i) => i !== index),
+    );
   };
 
   return (
@@ -40,6 +50,7 @@ const EventsElement = () => {
       handleEventDescriptionChange={handleEventDescriptionChange}
       handleEventDateChange={handleEventDateChange}
       handleEventAddToTable={handleEventAddToTable}
+      handleEventDeleteFromTable={handleEventDeleteFromTable}
       isCreateButtonDisabled={isCreateButtonDisabled}
     />
   );
