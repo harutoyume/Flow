@@ -17,13 +17,13 @@ const EventsElement = () => {
 
   useEffect(() => {
     const storedEvents = localStorage.getItem("tableEvents");
-    if (storedEvents.length > 2) {
+    if (storedEvents && storedEvents !== '[]') {
       setTableEvents(JSON.parse(storedEvents));
     }
   }, []);
 
   useEffect(() => {
-      localStorage.setItem("tableEvents", JSON.stringify(tableEvents));
+    localStorage.setItem("tableEvents", JSON.stringify(tableEvents));
   }, [tableEvents]);
 
   const handleEventNameChange = (e: ChangeEvent<HTMLInputElement>) => {
