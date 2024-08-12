@@ -4,7 +4,7 @@ import EventsElement from "@/components/Events/EventsElement";
 import TasksElement from "@/components/Tasks/TasksElement";
 import AppFooter from "@/components/App/AppFooter";
 
-export default function Home() {
+export default function Events() {
   return (
     <>
       <Head>
@@ -15,13 +15,8 @@ export default function Home() {
           <AppNavigation />
         </header>
         <main className="px-4 py-24 flex flex-col gap-y-4">
-          <div className="w-full flex flex-row justify-between gap-4 max-sm:flex-col">
-            <div className="w-full">
-              <TasksElement />
-            </div>
-            <div className="w-full">
-              <EventsElement />
-            </div>
+          <div className="w-full">
+            <EventsElement />
           </div>
         </main>
         <AppFooter />

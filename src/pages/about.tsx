@@ -1,10 +1,10 @@
 import Head from "next/head";
 import AppNavigation from "@/components/App/AppNavigation";
+import AppDescription from "@/components/App/AppDescription";
 import EventsElement from "@/components/Events/EventsElement";
-import TasksElement from "@/components/Tasks/TasksElement";
 import AppFooter from "@/components/App/AppFooter";
 
-export default function Home() {
+export default function About() {
   return (
     <>
       <Head>
@@ -15,13 +15,8 @@ export default function Home() {
           <AppNavigation />
         </header>
         <main className="px-4 py-24 flex flex-col gap-y-4">
-          <div className="w-full flex flex-row justify-between gap-4 max-sm:flex-col">
-            <div className="w-full">
-              <TasksElement />
-            </div>
-            <div className="w-full">
-              <EventsElement />
-            </div>
+          <div className="w-full">
+            <AppDescription />
           </div>
         </main>
         <AppFooter />

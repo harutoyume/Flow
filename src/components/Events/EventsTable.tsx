@@ -26,19 +26,19 @@ const EventsTable = ({
           <TableHead>
             {" "}
             <span className="flex items-center gap-x-1">
-              <Calendar size={16} /> Cобытие
+              <Calendar size={14} /> Cобытие
             </span>{" "}
           </TableHead>
           <TableHead>
             {" "}
             <span className="flex items-center gap-x-1">
-              <Text size={16} /> Описание
+              <Text size={14} /> Описание
             </span>{" "}
           </TableHead>
           <TableHead>
             {" "}
             <span className="flex items-center gap-x-1">
-              <Clock3 size={16} /> Дата
+              <Clock3 size={14} /> Дата
             </span>{" "}
           </TableHead>
         </TableRow>

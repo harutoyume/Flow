@@ -17,7 +17,7 @@ const EventsElement = () => {
 
   useEffect(() => {
     const storedEvents = localStorage.getItem("tableEvents");
-    if (storedEvents && storedEvents !== '[]') {
+    if (storedEvents && storedEvents !== "[]") {
       setTableEvents(JSON.parse(storedEvents));
     }
   }, []);
