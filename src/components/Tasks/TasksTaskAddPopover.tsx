@@ -13,12 +13,14 @@ import { Plus } from "lucide-react";
 interface TasksAddPopoverProps {
   handleTaskDescriptionChange: (e: ChangeEvent<HTMLInputElement>) => void;
   handleTaskAddToTable: () => void;
+  handleTaskAddCancel: () => void;
   isCreateButtonDisabled: boolean;
 }
 
 const TasksTaskAddPopover = ({
   handleTaskDescriptionChange,
   handleTaskAddToTable,
+  handleTaskAddCancel,
   isCreateButtonDisabled,
 }: TasksAddPopoverProps) => {
   return (
@@ -57,7 +59,9 @@ const TasksTaskAddPopover = ({
               </Button>
             </PopoverPrimitive.Close>
             <PopoverPrimitive.Close asChild>
-              <Button variant="outline">Отмена</Button>
+              <Button onClick={handleTaskAddCancel} variant="outline">
+                Отмена
+              </Button>
             </PopoverPrimitive.Close>
           </div>
         </div>

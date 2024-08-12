@@ -13,6 +13,7 @@ interface EventsCardProps {
   tasks: { description: string }[];
   handleTaskDescriptionChange: (e: ChangeEvent<HTMLInputElement>) => void;
   handleTaskAddToTable: () => void;
+  handleTaskAddCancel: () => void;
   isCreateButtonDisabled: boolean;
   handleTaskDeleteFromTable: (index: number) => void;
 }
@@ -21,6 +22,7 @@ const TasksCard = ({
   tasks,
   handleTaskDescriptionChange,
   handleTaskAddToTable,
+  handleTaskAddCancel,
   isCreateButtonDisabled,
   handleTaskDeleteFromTable,
 }: EventsCardProps) => {
@@ -35,6 +37,7 @@ const TasksCard = ({
           <TasksTaskAddPopover
             handleTaskDescriptionChange={handleTaskDescriptionChange}
             handleTaskAddToTable={handleTaskAddToTable}
+            handleTaskAddCancel={handleTaskAddCancel}
             isCreateButtonDisabled={isCreateButtonDisabled}
           />
         </div>

@@ -30,6 +30,10 @@ const TasksElement = () => {
     setTaskDescription("");
   };
 
+  const handleTaskAddCancel = () => {
+    setTaskDescription("");
+  };
+
   const handleTaskDeleteFromTable = (index: number) => {
     setTasks((prevTasks) => prevTasks.filter((_, i) => i !== index));
   };
@@ -39,6 +43,7 @@ const TasksElement = () => {
       tasks={tasks}
       handleTaskDescriptionChange={handleTaskDescriptionChange}
       handleTaskAddToTable={handleTaskAddToTable}
+      handleTaskAddCancel={handleTaskAddCancel}
       handleTaskDeleteFromTable={handleTaskDeleteFromTable}
       isCreateButtonDisabled={isCreateButtonDisabled}
     />

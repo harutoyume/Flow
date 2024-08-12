@@ -48,6 +48,12 @@ const EventsElement = () => {
     setEventDate("");
   };
 
+  const handleEventAddCancel = () => {
+    setEventName("");
+    setEventDescription("");
+    setEventDate("");
+  };
+
   const handleEventDeleteFromTable = (index: number) => {
     setTableEvents((prevTableEvents) =>
       prevTableEvents.filter((_, i) => i !== index),
@@ -61,6 +67,7 @@ const EventsElement = () => {
       handleEventDescriptionChange={handleEventDescriptionChange}
       handleEventDateChange={handleEventDateChange}
       handleEventAddToTable={handleEventAddToTable}
+      handleEventAddCancel={handleEventAddCancel}
       handleEventDeleteFromTable={handleEventDeleteFromTable}
       isCreateButtonDisabled={isCreateButtonDisabled}
     />

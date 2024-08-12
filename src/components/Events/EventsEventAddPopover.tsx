@@ -15,6 +15,7 @@ interface EventsAddPopoverProps {
   handleEventDescriptionChange: (e: ChangeEvent<HTMLInputElement>) => void;
   handleEventDateChange: (e: ChangeEvent<HTMLInputElement>) => void;
   handleEventAddToTable: () => void;
+  handleEventAddCancel: () => void;
   isCreateButtonDisabled: boolean;
 }
 
@@ -23,6 +24,7 @@ const EventsEventAddPopover = ({
   handleEventDescriptionChange,
   handleEventDateChange,
   handleEventAddToTable,
+  handleEventAddCancel,
   isCreateButtonDisabled,
 }: EventsAddPopoverProps) => {
   return (
@@ -79,7 +81,9 @@ const EventsEventAddPopover = ({
               </Button>
             </PopoverPrimitive.Close>
             <PopoverPrimitive.Close asChild>
-              <Button variant="outline">Отмена</Button>
+              <Button onClick={handleEventAddCancel} variant="outline">
+                Отмена
+              </Button>
             </PopoverPrimitive.Close>
           </div>
         </div>
