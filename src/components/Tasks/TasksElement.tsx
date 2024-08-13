@@ -3,6 +3,7 @@ import TasksCard from "@/components/Tasks/TasksCard";
 
 interface Tasks {
   description: string;
+  checked: boolean;
 }
 
 const TasksElement = () => {
@@ -26,12 +27,21 @@ const TasksElement = () => {
   };
 
   const handleTaskAddToTable = () => {
-    setTasks((prevTasks) => [...prevTasks, { description: taskDescription }]);
+    setTasks((prevTasks) => [
+      ...prevTasks,
+      { description: taskDescription, checked: false },
+    ]);
     setTaskDescription("");
   };
 
   const handleTaskAddCancel = () => {
     setTaskDescription("");
+  };
+
+  const handleTaskCheck = (index: number) => {
+    const updateTasks = [...tasks];
+    updateTasks[index].checked = !updateTasks[index].checked;
+    setTasks(updateTasks);
   };
 
   const handleTaskDeleteFromTable = (index: number) => {
@@ -45,6 +55,7 @@ const TasksElement = () => {
       handleTaskAddToTable={handleTaskAddToTable}
       handleTaskAddCancel={handleTaskAddCancel}
       handleTaskDeleteFromTable={handleTaskDeleteFromTable}
+      handleTaskCheck={handleTaskCheck}
       isCreateButtonDisabled={isCreateButtonDisabled}
     />
   );

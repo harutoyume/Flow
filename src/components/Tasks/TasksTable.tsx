@@ -1,4 +1,4 @@
-import { Text } from "lucide-react";
+import { Square, Brackets, Diamond } from "lucide-react";
 import {
   Table,
   TableBody,
@@ -11,11 +11,16 @@ import { Checkbox } from "@/components/ui/checkbox";
 import TasksTaskMenu from "@/components/Tasks/TasksTaskMenu";
 
 interface TasksTableProps {
-  tasks: { description: string }[];
+  tasks: { description: string; checked: boolean }[];
   handleTaskDeleteFromTable: (index: number) => void;
+  handleTaskCheck: (index: number) => void;
 }
 
-const TasksTable = ({ tasks, handleTaskDeleteFromTable }: TasksTableProps) => {
+const TasksTable = ({
+  tasks,
+  handleTaskDeleteFromTable,
+  handleTaskCheck,
+}: TasksTableProps) => {
   return (
     <Table>
       <TableHeader>
@@ -23,18 +28,21 @@ const TasksTable = ({ tasks, handleTaskDeleteFromTable }: TasksTableProps) => {
           <TableHead>
             {" "}
             <span className="flex items-center gap-x-1">
-              <Text size={14} /> Задача
+              <Square size={14} /> Задача
             </span>{" "}
           </TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
         {tasks.length ? (
-          tasks.map((tableEvent, index) => (
+          tasks.map((task, index) => (
             <TableRow key={index}>
               <TableCell className="flex items-center gap-x-4">
-                <Checkbox />
-                {tableEvent.description}
+                <Checkbox
+                  onCheckedChange={() => handleTaskCheck(index)}
+                  defaultChecked={task.checked}
+                />
+                {task.description}
               </TableCell>
               <TableCell className="text-right">
                 <TasksTaskMenu

@@ -10,12 +10,13 @@ import TasksTable from "@/components/Tasks/TasksTable";
 import TasksTaskAddPopover from "@/components/Tasks/TasksTaskAddPopover";
 
 interface EventsCardProps {
-  tasks: { description: string }[];
+  tasks: { description: string; checked: boolean }[];
   handleTaskDescriptionChange: (e: ChangeEvent<HTMLInputElement>) => void;
   handleTaskAddToTable: () => void;
   handleTaskAddCancel: () => void;
   isCreateButtonDisabled: boolean;
   handleTaskDeleteFromTable: (index: number) => void;
+  handleTaskCheck: (index: number) => void;
 }
 
 const TasksCard = ({
@@ -24,6 +25,7 @@ const TasksCard = ({
   handleTaskAddToTable,
   handleTaskAddCancel,
   isCreateButtonDisabled,
+  handleTaskCheck,
   handleTaskDeleteFromTable,
 }: EventsCardProps) => {
   return (
@@ -46,6 +48,7 @@ const TasksCard = ({
         <TasksTable
           tasks={tasks}
           handleTaskDeleteFromTable={handleTaskDeleteFromTable}
+          handleTaskCheck={handleTaskCheck}
         />
       </CardContent>
     </Card>
