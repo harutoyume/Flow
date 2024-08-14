@@ -11,6 +11,9 @@ import EventsEventAddPopover from "@/components/Events/EventsEventAddPopover";
 
 interface EventsCardProps {
   tableEvents: { name: string; description: string; date: string }[];
+  setTableEvents: React.Dispatch<
+    React.SetStateAction<{ name: string; description: string; date: string }[]>
+  >;
   handleEventNameChange: (e: ChangeEvent<HTMLInputElement>) => void;
   handleEventDescriptionChange: (e: ChangeEvent<HTMLInputElement>) => void;
   handleEventDateChange: (e: ChangeEvent<HTMLInputElement>) => void;
@@ -22,6 +25,7 @@ interface EventsCardProps {
 
 const EventsCard = ({
   tableEvents,
+  setTableEvents,
   handleEventNameChange,
   handleEventDescriptionChange,
   handleEventDateChange,
@@ -51,6 +55,7 @@ const EventsCard = ({
       <CardContent>
         <EventsTable
           tableEvents={tableEvents}
+          setTableEvents={setTableEvents}
           handleEventDeleteFromTable={handleEventDeleteFromTable}
         />
       </CardContent>

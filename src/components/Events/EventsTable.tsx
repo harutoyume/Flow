@@ -12,11 +12,15 @@ import EventsEventMenu from "@/components/Events/EventsEventMenu";
 
 interface EventsTableProps {
   tableEvents: { name: string; description: string; date: string }[];
+  setTableEvents: React.Dispatch<
+    React.SetStateAction<{ name: string; description: string; date: string }[]>
+  >;
   handleEventDeleteFromTable: (index: number) => void;
 }
 
 const EventsTable = ({
   tableEvents,
+  setTableEvents,
   handleEventDeleteFromTable,
 }: EventsTableProps) => {
   return (
@@ -52,6 +56,8 @@ const EventsTable = ({
               <TableCell>{tableEvent.date}</TableCell>
               <TableCell>
                 <EventsEventMenu
+                  tableEvents={tableEvents}
+                  setTableEvents={setTableEvents}
                   handleEventDeleteFromTable={handleEventDeleteFromTable}
                   index={index}
                 />

@@ -63,6 +63,7 @@ const EventsElement = () => {
   return (
     <EventsCard
       tableEvents={tableEvents}
+      setTableEvents={setTableEvents}
       handleEventNameChange={handleEventNameChange}
       handleEventDescriptionChange={handleEventDescriptionChange}
       handleEventDateChange={handleEventDateChange}
