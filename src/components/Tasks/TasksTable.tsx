@@ -1,4 +1,4 @@
-import { Square, Brackets, Diamond } from "lucide-react";
+import { Square } from "lucide-react";
 import {
   Table,
   TableBody,
