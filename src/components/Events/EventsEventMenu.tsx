@@ -1,3 +1,4 @@
+import React from "react";
 import { Ellipsis } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -9,7 +10,6 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import EventsEventEditDialog from "@/components/Events/EventsEventEditDialog";
-import React from "react";
 
 interface EventsEventMenuProps {
   tableEvents: { name: string; description: string; date: string }[];

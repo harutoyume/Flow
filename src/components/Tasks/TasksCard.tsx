@@ -11,6 +11,9 @@ import TasksTaskAddPopover from "@/components/Tasks/TasksTaskAddPopover";
 
 interface EventsCardProps {
   tasks: { description: string; checked: boolean }[];
+  setTasks: React.Dispatch<
+    React.SetStateAction<{ description: string; checked: boolean }[]>
+  >;
   handleTaskDescriptionChange: (e: ChangeEvent<HTMLInputElement>) => void;
   handleTaskAddToTable: () => void;
   handleTaskAddCancel: () => void;
@@ -21,6 +24,7 @@ interface EventsCardProps {
 
 const TasksCard = ({
   tasks,
+  setTasks,
   handleTaskDescriptionChange,
   handleTaskAddToTable,
   handleTaskAddCancel,
@@ -47,6 +51,7 @@ const TasksCard = ({
       <CardContent>
         <TasksTable
           tasks={tasks}
+          setTasks={setTasks}
           handleTaskDeleteFromTable={handleTaskDeleteFromTable}
           handleTaskCheck={handleTaskCheck}
         />

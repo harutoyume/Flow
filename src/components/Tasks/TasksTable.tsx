@@ -9,15 +9,20 @@ import {
 } from "@/components/ui/table";
 import { Checkbox } from "@/components/ui/checkbox";
 import TasksTaskMenu from "@/components/Tasks/TasksTaskMenu";
+import React from "react";
 
 interface TasksTableProps {
   tasks: { description: string; checked: boolean }[];
+  setTasks: React.Dispatch<
+    React.SetStateAction<{ description: string; checked: boolean }[]>
+  >;
   handleTaskDeleteFromTable: (index: number) => void;
   handleTaskCheck: (index: number) => void;
 }
 
 const TasksTable = ({
   tasks,
+  setTasks,
   handleTaskDeleteFromTable,
   handleTaskCheck,
 }: TasksTableProps) => {
@@ -46,6 +51,8 @@ const TasksTable = ({
               </TableCell>
               <TableCell className="text-right">
                 <TasksTaskMenu
+                  setTasks={setTasks}
+                  tasks={tasks}
                   handleTaskDeleteFromTable={handleTaskDeleteFromTable}
                   index={index}
                 />

@@ -51,6 +51,7 @@ const TasksElement = () => {
   return (
     <TasksCard
       tasks={tasks}
+      setTasks={setTasks}
       handleTaskDescriptionChange={handleTaskDescriptionChange}
       handleTaskAddToTable={handleTaskAddToTable}
       handleTaskAddCancel={handleTaskAddCancel}
