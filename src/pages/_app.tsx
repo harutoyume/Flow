@@ -12,7 +12,7 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       <ThemeProvider
         attribute="class"
-        defaultTheme="light"
+        defaultTheme="system"
         enableSystem
         disableTransitionOnChange
       >
