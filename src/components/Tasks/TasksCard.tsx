@@ -9,7 +9,7 @@ import {
 import TasksTable from "@/components/Tasks/TasksTable";
 import TasksTaskAddPopover from "@/components/Tasks/TasksTaskAddPopover";
 
-interface EventsCardProps {
+interface TasksCardProps {
   tasks: { description: string; checked: boolean }[];
   setTasks: React.Dispatch<
     React.SetStateAction<{ description: string; checked: boolean }[]>
@@ -31,7 +31,7 @@ const TasksCard = ({
   isCreateButtonDisabled,
   handleTaskCheck,
   handleTaskDeleteFromTable,
-}: EventsCardProps) => {
+}: TasksCardProps) => {
   return (
     <Card>
       <CardHeader className="flex flex-row justify-between">

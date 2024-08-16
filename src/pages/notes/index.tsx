@@ -1,10 +1,9 @@
 import Head from "next/head";
 import AppNavigation from "@/components/App/AppNavigation";
-import EventsElement from "@/components/Events/EventsElement";
-import TasksElement from "@/components/Tasks/TasksElement";
+import NotesElement from "@/components/Notes/NotesElement";
 import AppFooter from "@/components/App/AppFooter";
 
-export default function Events() {
+export default function Notes() {
   return (
     <>
       <Head>
@@ -16,7 +15,7 @@ export default function Events() {
         </header>
         <main className="px-4 py-24 flex flex-col gap-y-4">
           <div className="w-full">
-            <EventsElement />
+            <NotesElement />
           </div>
         </main>
         <AppFooter />
